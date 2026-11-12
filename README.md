@@ -115,3 +115,11 @@ java -cp bin sinav.Soru2
 ```
 
 The project opens in Eclipse as is and is set up for Java 21.
+
+## Automatic check
+
+`ci/run_examples.py` compiles `src/` with JDK 21, runs every program and compares its output with the expected output at the end of the file. GitHub Actions runs it on every push. The original `Sinav.java` reads a line from the keyboard; the check gives it `Sinav.girdi`. To run the check locally:
+
+```bash
+python ci/run_examples.py
+```
